@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./App.css";
 import SavedList from "./components/SavedList";
 // movies arrayini movies.js dosyasından import et
+import { movies } from "./movies.js";
 
 function App() {
   /*
@@ -9,6 +11,8 @@ function App() {
     - kaydedilmiş filmler için tanımladığın state'in başlangıç değeri boş array olsun. 
     - bunu SavedList componentına prop olarak gönder.
   */
+  const [movieList, setMovieList] = useState(movies);
+  const [savedMovie, setSavedMovie] = useState([]);
 
   const handleSave = (movie) => {
     /*

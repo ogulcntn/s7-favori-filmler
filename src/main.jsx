@@ -4,5 +4,10 @@ import App from "./App.jsx";
 
 /* react-router-dom@5 paketini kur */
 /* Routing kullanmak için gereken react-router wrapperı ile App componentını sar. */
+import { BrowserRouter } from "react-router-dom";
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
