@@ -1,5 +1,5 @@
 {
-  "stats": "5 passed, 8 failed out of 13",
+  "stats": "6 passed, 7 failed out of 13",
   "tests": [
     {
       "name": "react-router-dom v5 kullanılıyor mu?",
@@ -31,7 +31,7 @@
     },
     {
       "name": "App'de handleSave fonksiyonu MovieDetails'e doğru şekilde gönderilmiş mi?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "Filme tıklanınca /filmler/:id rotasına yönlendiriyor mu?",

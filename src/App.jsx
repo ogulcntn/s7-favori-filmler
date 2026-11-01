@@ -3,6 +3,9 @@ import "./App.css";
 import SavedList from "./components/SavedList";
 // movies arrayini movies.js dosyasından import et
 import { movies } from "./movies.js";
+import { Route } from "react-router-dom";
+import MoviesList from "./components/MoviesList";
+import MovieDetails from "./components/MovieDetails";
 
 function App() {
   /*
@@ -12,7 +15,7 @@ function App() {
     - bunu SavedList componentına prop olarak gönder.
   */
   const [movieList, setMovieList] = useState(movies);
-  const [savedMovie, setSavedMovie] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
 
   const handleSave = (movie) => {
     /*
@@ -20,6 +23,10 @@ function App() {
       - aynı filmi 2. kez eklememeli.
       - bu fonksiyonu "Kaydet" butonunun olduğu componente prop olarak gönder.
     */
+    const saved = savedMovies.find((item) => item.id === movie.id);
+    if (!saved) {
+      setSavedMovies([...savedMovies, movie]);
+    }
   };
 
   return (
@@ -32,12 +39,14 @@ function App() {
             - 2. route `/filmler/` parametresinden sonra `id` parametresini alacak  (örnek: `/filmler/2`, `/filmler/3`)
             - Bu route `MovieDetails` componentini görüntüleyecek.
         */}
+        <Route path="/" exact>
+          <MoviesList movieList={movieList} />
+        </Route>
+        <Route path="/filmler/:id">
+          <MovieDetails onSave={handleSave} />
+        </Route>
 
-        <div className="movies box">
-          <em>Üstteki görevleri tamamladığında bu divi sil</em>
-        </div>
-
-        <SavedList savedList={[]} />
+        <SavedList savedList={savedMovies} />
       </div>
     </div>
   );
