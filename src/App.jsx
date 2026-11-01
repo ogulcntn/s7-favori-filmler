@@ -3,7 +3,7 @@ import "./App.css";
 import SavedList from "./components/SavedList";
 // movies arrayini movies.js dosyasından import et
 import { movies } from "./movies.js";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MoviesList from "./components/MoviesList";
 import MovieDetails from "./components/MovieDetails";
 
@@ -39,13 +39,14 @@ function App() {
             - 2. route `/filmler/` parametresinden sonra `id` parametresini alacak  (örnek: `/filmler/2`, `/filmler/3`)
             - Bu route `MovieDetails` componentini görüntüleyecek.
         */}
-        <Route path="/" exact>
-          <MoviesList movieList={movieList} />
-        </Route>
-        <Route path="/filmler/:id">
-          <MovieDetails onSave={handleSave} />
-        </Route>
-
+        <Switch>
+          <Route path="/" exact>
+            <MoviesList movies={movieList} />
+          </Route>
+          <Route path="/filmler/:id">
+            <MovieDetails onSave={handleSave} />
+          </Route>
+        </Switch>
         <SavedList savedList={savedMovies} />
       </div>
     </div>

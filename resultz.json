@@ -1,5 +1,5 @@
 {
-  "stats": "6 passed, 7 failed out of 13",
+  "stats": "13 passed, 0 failed out of 13",
   "tests": [
     {
       "name": "react-router-dom v5 kullanılıyor mu?",
@@ -23,11 +23,11 @@
     },
     {
       "name": "Ana sayfa '/' route'u MoviesList componentini ve filmleri render ediyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "'/filmler/:id' route'u MovieDetails componentini render ediyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "App'de handleSave fonksiyonu MovieDetails'e doğru şekilde gönderilmiş mi?",
@@ -35,23 +35,23 @@
     },
     {
       "name": "Filme tıklanınca /filmler/:id rotasına yönlendiriyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "MovieDetails'da movies import edilmiş mi?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "URL'deki id'ye göre doğru film detayını gösteriyor",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "MovieDetails componentında 'Geri dön' butonuna tıklandığında bir önceki sayfaya gidiyor mu?",
-      "state": "fail"
+      "state": "pass"
     },
     {
       "name": "MovieDetails componentına iletilen kaydetme fonksiyonu doğru çalışıyor mu?",
-      "state": "fail"
+      "state": "pass"
     }
   ]
 }
